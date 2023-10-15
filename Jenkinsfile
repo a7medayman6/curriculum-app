@@ -27,8 +27,7 @@ docker run hello-world'''
 
     stage('Log into Dockerhub') {
       environment {
-        DOCKERHUB_USER = 'fuze365'
-        DOCKERHUB_PASSWORD = 'gv1&3Ea9W##onDQAMUG&41CvZ7h1d1'
+        DOCKERHUB_CREDS = 'credentials(\'dockerhub-creds\')'
       }
       steps {
         sh '''echo docker login -u "$DOCKERHUB_CREDS_USR" -p "$DOCKERHUB_CREDS_PSW"
