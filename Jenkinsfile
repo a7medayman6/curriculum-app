@@ -31,7 +31,7 @@ docker run hello-world'''
         DOCKERHUB_PASSWORD = 'gv1&3Ea9W##onDQAMUG&41CvZ7h1d1'
       }
       steps {
-        sh 'docker login -u $dockerhub-creds_USR -p $dockerhub-creds_PSW'
+        sh 'docker login -u $DOCKERHUB_CREDS_USR -p $DOCKERHUB_CREDS_PSW'
       }
     }
 
