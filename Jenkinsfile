@@ -20,8 +20,8 @@ pipeline {
 
     stage('error') {
       steps {
-        sh '''# docker build -f curriculum-front/Dockerfile -t fuze365/curriculum-front:latest .
-docker run hello-world'''
+        sh '''docker build -f curriculum-front/Dockerfile -t fuze365/curriculum-front:latest .
+# docker run hello-world'''
       }
     }
 
