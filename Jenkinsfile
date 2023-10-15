@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'docker-agent'
+    }
+
+  }
   stages {
     stage('Checkout Code') {
       steps {
@@ -13,7 +18,7 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         sh '''# docker build -f curriculum-front/Dockerfile -t fuze365/curriculum-front:latest .
 docker run hello-world'''
