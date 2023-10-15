@@ -18,10 +18,10 @@ pipeline {
       }
     }
 
-    stage('error') {
+    stage('Test Docker') {
       steps {
-        sh '''docker build -f curriculum-front/Dockerfile -t fuze365/curriculum-front:latest .
-# docker run hello-world'''
+        sh '''# docker build -f curriculum-front/Dockerfile -t fuze365/curriculum-front:latest .
+docker run hello-world'''
       }
     }
 
@@ -32,12 +32,6 @@ pipeline {
       }
       steps {
         sh 'docker login -u $dockerhub-creds_USR -p $dockerhub-creds_PSW'
-      }
-    }
-
-    stage('Push') {
-      steps {
-        sh 'docker push fuze365/curriculum-front:latest'
       }
     }
 
